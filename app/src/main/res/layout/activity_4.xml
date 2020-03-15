@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:orientation="horizontal"
+        android:background="#EE6363">
+
+        <ImageView
+            android:id="@+id/acticity_4_back"
+            android:layout_width="40dp"
+            android:layout_height="match_parent"
+            android:src="@drawable/back"
+            android:padding="5dp"/>
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:textSize="20dp"
+            android:textStyle="bold"
+            android:textColor="#fff"
+            android:text="信息管理" />
+
+        <ImageView
+            android:id="@+id/acticity_4_add"
+            android:layout_width="40dp"
+            android:layout_height="match_parent"
+            android:src="@drawable/add"
+            android:padding="2dp"/>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:background="#f2cbc0"
+        android:orientation="horizontal"
+        android:paddingLeft="10dp"
+        android:paddingRight="10dp"
+        android:focusable="true"
+        android:focusableInTouchMode="true"
+        android:paddingTop="5dp"
+        android:paddingBottom="5dp">
+
+        <EditText
+            android:id="@+id/acticity_4_EditText"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="match_parent"
+            android:gravity="center|left"
+            android:paddingLeft="10dp"
+            android:background="@drawable/edit_background"/>
+
+        <TextView
+            android:id="@+id/acticity_4_Btn"
+            android:layout_width="70dp"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:textColor="#d17f67"
+            android:text="搜索"/>
+
+    </LinearLayout>
+
+    <ListView
+        android:id="@+id/acticity_4_ListView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="10dp"
+        android:divider="@null"/>
+
+</LinearLayout>

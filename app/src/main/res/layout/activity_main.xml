@@ -1,0 +1,201 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:gravity="center"
+        android:text="主菜单"
+        android:textSize="20dp"
+        android:textStyle="bold"
+        android:textColor="#fff"
+        android:background="#EE6363"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:orientation="horizontal"
+        android:gravity="center">
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:gravity="center">
+
+            <ImageView
+                android:id="@+id/mainActivity_banjiguanli_1"
+                android:layout_width="150dp"
+                android:layout_height="150dp"
+                android:padding="20dp"
+                android:src="@drawable/edit_background"/>
+
+            <TextView
+                android:layout_width="150dp"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:textColor="#333333"
+                android:textStyle="bold"
+                android:textSize="20dp"
+                android:text="班级管理"/>
+
+        </LinearLayout>
+
+
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:orientation="vertical"
+            android:gravity="center">
+
+            <ImageView
+                android:id="@+id/mainActivity_xuejiguanli_2"
+                android:layout_width="150dp"
+                android:layout_height="150dp"
+                android:padding="20dp"
+                android:src="@drawable/edit_background"/>
+
+            <TextView
+                android:layout_width="150dp"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:textColor="#333333"
+                android:textStyle="bold"
+                android:textSize="20dp"
+                android:text="学籍管理"/>
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:orientation="horizontal"
+        android:gravity="center">
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:gravity="center">
+
+            <ImageView
+                android:id="@+id/mainActivity_zhuanyeguanli_3"
+                android:layout_width="150dp"
+                android:layout_height="150dp"
+                android:padding="20dp"
+                android:src="@drawable/edit_background"/>
+
+            <TextView
+                android:layout_width="150dp"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:textColor="#333333"
+                android:textStyle="bold"
+                android:textSize="20dp"
+                android:text="专业管理"/>
+
+        </LinearLayout>
+
+
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:orientation="vertical"
+            android:gravity="center">
+
+            <ImageView
+                android:id="@+id/mainActivity_xinxiguanli_4"
+                android:layout_width="150dp"
+                android:layout_height="150dp"
+                android:padding="20dp"
+                android:src="@drawable/edit_background" />
+
+            <TextView
+                android:layout_width="150dp"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:textColor="#333333"
+                android:textStyle="bold"
+                android:textSize="20dp"
+                android:text="信息管理"/>
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:orientation="horizontal"
+        android:gravity="center">
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:gravity="center">
+
+            <ImageView
+                android:id="@+id/mainActivity_kechengguanli_5"
+                android:layout_width="150dp"
+                android:layout_height="150dp"
+                android:padding="20dp"
+                android:src="@drawable/edit_background"/>
+
+            <TextView
+                android:layout_width="150dp"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:textColor="#333333"
+                android:textStyle="bold"
+                android:textSize="20dp"
+                android:text="课程管理"/>
+
+        </LinearLayout>
+
+
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:orientation="vertical"
+            android:gravity="center">
+
+            <ImageView
+                android:id="@+id/mainActivity_luntanguanli_6"
+                android:layout_width="150dp"
+                android:layout_height="150dp"
+                android:padding="20dp"
+                android:src="@drawable/edit_background"/>
+
+            <TextView
+                android:layout_width="150dp"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:textColor="#333333"
+                android:textStyle="bold"
+                android:textSize="20dp"
+                android:text="论坛管理"/>
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+</LinearLayout>
