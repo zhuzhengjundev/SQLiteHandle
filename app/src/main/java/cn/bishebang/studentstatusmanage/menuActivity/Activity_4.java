@@ -41,10 +41,11 @@ public class Activity_4 extends AppCompatActivity {
             public void onClick(View v) {
                 Intent intent = new Intent(Activity_4.this, Activity_4_Add.class);
                 intent.putExtra("id", "");
-                intent.putExtra("xuehao","");
+                intent.putExtra("xuehao", "");
                 intent.putExtra("name", "");
-                intent.putExtra("dianhua","");
+                intent.putExtra("dianhua", "");
                 intent.putExtra("banji", "");
+                intent.putExtra("zhuanye", "");
                 startActivity(intent);
             }
         });
@@ -67,7 +68,8 @@ public class Activity_4 extends AppCompatActivity {
                                     cursor.getString(cursor.getColumnIndex("xuehao")),
                                     cursor.getString(cursor.getColumnIndex("name")),
                                     cursor.getString(cursor.getColumnIndex("dianhua")),
-                                    cursor.getString(cursor.getColumnIndex("banji")));
+                                    cursor.getString(cursor.getColumnIndex("banji")),
+                                    cursor.getString(cursor.getColumnIndex("zhuanye")));
                             xinxiItemList.add(xinxiItem);
                             xinxiItemAdapter.notifyDataSetChanged();
                         } while (cursor.moveToNext());
@@ -81,7 +83,8 @@ public class Activity_4 extends AppCompatActivity {
                                     cursor.getString(cursor.getColumnIndex("xuehao")),
                                     cursor.getString(cursor.getColumnIndex("name")),
                                     cursor.getString(cursor.getColumnIndex("dianhua")),
-                                    cursor.getString(cursor.getColumnIndex("banji")));
+                                    cursor.getString(cursor.getColumnIndex("banji")),
+                                    cursor.getString(cursor.getColumnIndex("zhuanye")));
                             xinxiItemList.add(xinxiItem);
                         } while (cursor.moveToNext());
                     }
@@ -102,7 +105,8 @@ public class Activity_4 extends AppCompatActivity {
                         cursor.getString(cursor.getColumnIndex("xuehao")),
                         cursor.getString(cursor.getColumnIndex("name")),
                         cursor.getString(cursor.getColumnIndex("dianhua")),
-                        cursor.getString(cursor.getColumnIndex("banji")));
+                        cursor.getString(cursor.getColumnIndex("banji")),
+                        cursor.getString(cursor.getColumnIndex("zhuanye")));
                 xinxiItemList.add(xinxiItem);
                 xinxiItemAdapter.notifyDataSetChanged();
             } while (cursor.moveToNext());

@@ -31,6 +31,7 @@ public class MySQLiteOpenHelper extends SQLiteOpenHelper {
             + "xuehao text,"
             + "name text,"
             + "dianhua text,"
+            + "zhuanye text,"
             + "banji text)";
 
     public static final String KECHENG = "create table kecheng("

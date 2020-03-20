@@ -7,13 +7,15 @@ public class XinxiItem {
     private String name;
     private String dianhua;
     private String banji;
+    private String zhuanye;
 
-    public XinxiItem(String id, String xuehao, String name, String dianhua, String banji) {
+    public XinxiItem(String id, String xuehao, String name, String dianhua, String banji, String zhuanye) {
         this.id = id;
         this.xuehao = xuehao;
         this.name = name;
         this.dianhua = dianhua;
         this.banji = banji;
+        this.zhuanye = zhuanye;
     }
 
     public String getId() {
@@ -54,5 +56,13 @@ public class XinxiItem {
 
     public void setBanji(String banji) {
         this.banji = banji;
+    }
+
+    public String getZhuanye() {
+        return zhuanye;
+    }
+
+    public void setZhuanye(String zhuanye) {
+        this.zhuanye = zhuanye;
     }
 }

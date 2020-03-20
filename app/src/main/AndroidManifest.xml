@@ -9,7 +9,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".menuActivity.Activity_6_Add"></activity>
+        <activity android:name=".StuListActivity"></activity>
+        <activity android:name=".menuActivity.Activity_6_Add" />
         <activity android:name=".menuActivity.Activity_5_Add" />
         <activity android:name=".menuActivity.Activity_4_Add" />
         <activity android:name=".menuActivity.Activity_3_Add" />

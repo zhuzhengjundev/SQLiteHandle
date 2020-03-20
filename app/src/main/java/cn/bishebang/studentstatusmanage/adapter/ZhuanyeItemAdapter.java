@@ -1,7 +1,9 @@
 package cn.bishebang.studentstatusmanage.adapter;
 
 import android.content.Context;
+import android.content.DialogInterface;
 import android.content.Intent;
+import android.database.Cursor;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -11,9 +13,12 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import androidx.appcompat.app.AlertDialog;
+
 import java.util.List;
 
 import cn.bishebang.studentstatusmanage.R;
+import cn.bishebang.studentstatusmanage.StuListActivity;
 import cn.bishebang.studentstatusmanage.menuActivity.Activity_3_Add;
 import cn.bishebang.studentstatusmanage.sqlite.SQLHandle;
 
@@ -50,20 +55,56 @@ public class ZhuanyeItemAdapter extends ArrayAdapter<ZhuanyeItem> {
         viewHolder.linearLayout.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                Intent intent = new Intent(mContext, StuListActivity.class);
+                intent.putExtra("nianji", "");
+                intent.putExtra("zhuanye", zhuanyeItemList.get(position).getName());
+                mContext.startActivity(intent);
+            }
+        });
+        viewHolder.linearLayout.setOnLongClickListener(new View.OnLongClickListener() {
+            @Override
+            public boolean onLongClick(View v) {
                 Intent intent = new Intent(mContext, Activity_3_Add.class);
                 intent.putExtra("id", zhuanyeItemList.get(position).getId());
                 intent.putExtra("name", zhuanyeItemList.get(position).getName());
                 mContext.startActivity(intent);
+                return false;
             }
         });
         viewHolder.imageView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if (new SQLHandle(mContext).delData("zhuanye", zhuanyeItemList.get(position).getId())) {
-                    Toast.makeText(mContext, "删除成功", Toast.LENGTH_SHORT).show();
-                    remove(zhuanyeItemList.get(position));
-                }else{
-                    Toast.makeText(mContext, "删除失败", Toast.LENGTH_SHORT).show();
+                if (check(zhuanyeItemList.get(position).getName())) {
+                    AlertDialog.Builder dialog = new AlertDialog.Builder(mContext);
+                    dialog.setTitle("提示");
+                    dialog.setMessage("这个专业还有学生，删除会将学生信息一起删除，确定删除吗？");
+                    dialog.setCancelable(false);
+                    dialog.setPositiveButton("确定", new DialogInterface.OnClickListener() {
+                        @Override
+                        public void onClick(DialogInterface dialogInterface, int i) {
+                            if (new SQLHandle(mContext).delData("banji", zhuanyeItemList.get(position).getId())) {
+                                if (new SQLHandle(mContext).delData("xinxi","zhuanye", zhuanyeItemList.get(position).getName())) {
+                                    Toast.makeText(mContext, "删除成功", Toast.LENGTH_SHORT).show();
+                                    remove(zhuanyeItemList.get(position));
+                                }
+                            }else{
+                                Toast.makeText(mContext, "删除失败", Toast.LENGTH_SHORT).show();
+                            }
+                        }
+                    });
+                    dialog.setNegativeButton("取消", new DialogInterface.OnClickListener() {
+                        @Override
+                        public void onClick(DialogInterface dialogInterface, int i) {
+                        }
+                    });
+                    dialog.show();
+                }else {
+                    if (new SQLHandle(mContext).delData("zhuanye", zhuanyeItemList.get(position).getId())) {
+                        Toast.makeText(mContext, "删除成功", Toast.LENGTH_SHORT).show();
+                        remove(zhuanyeItemList.get(position));
+                    }else{
+                        Toast.makeText(mContext, "删除失败", Toast.LENGTH_SHORT).show();
+                    }
                 }
             }
         });
@@ -74,5 +115,17 @@ public class ZhuanyeItemAdapter extends ArrayAdapter<ZhuanyeItem> {
         LinearLayout linearLayout;
         TextView textView_name;
         ImageView imageView;
+    }
+
+    private boolean check(String _zhuanye) {
+        Cursor cursor = new SQLHandle(mContext).queryAllData("xinxi");
+        if (cursor.moveToFirst()) {
+            do {
+                if (cursor.getString(cursor.getColumnIndex("zhuanye")).equals(_zhuanye)) {
+                    return true;
+                }
+            } while (cursor.moveToNext());
+        }
+        return false;
     }
 }

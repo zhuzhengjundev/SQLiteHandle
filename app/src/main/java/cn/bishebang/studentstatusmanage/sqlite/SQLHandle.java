@@ -28,6 +28,10 @@ public class SQLHandle {
         return db.delete(name, "id = ?", new String[]{ value }) > 0;
     }
 
+    public boolean delData(String name,String key,String value) {
+        return db.delete(name, key + " = ?", new String[]{ value }) > 0;
+    }
+
     public boolean updateData(String name, String key, List<AddModel> addModelList) {
         ContentValues values = new ContentValues();
         for (int i = 0; i < addModelList.size(); i++) {

@@ -43,6 +43,7 @@ public class XinxiItemAdapter extends ArrayAdapter<XinxiItem> {
             viewHolder.textView_name = (TextView) view.findViewById(R.id.adapter_xinxi_name);
             viewHolder.textView_dianhua = (TextView) view.findViewById(R.id.adapter_xinxi_dianhua);
             viewHolder.textView_banji = (TextView) view.findViewById(R.id.adapter_xinxi_banji);
+            viewHolder.textView_zhuanye = (TextView) view.findViewById(R.id.adapter_xinxi_zhuanye);
             viewHolder.imageView = (ImageView) view.findViewById(R.id.adapter_xinxi_ImageView);
             view.setTag(viewHolder);
         }else {
@@ -53,6 +54,7 @@ public class XinxiItemAdapter extends ArrayAdapter<XinxiItem> {
         viewHolder.textView_name.setText(xinxiItem.getName());
         viewHolder.textView_dianhua.setText(xinxiItem.getDianhua());
         viewHolder.textView_banji.setText(xinxiItem.getBanji());
+        viewHolder.textView_zhuanye.setText(xinxiItem.getZhuanye());
         viewHolder.linearLayout.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -62,6 +64,7 @@ public class XinxiItemAdapter extends ArrayAdapter<XinxiItem> {
                 intent.putExtra("name", xinxiItemList.get(position).getName());
                 intent.putExtra("dianhua", xinxiItemList.get(position).getDianhua());
                 intent.putExtra("banji", xinxiItemList.get(position).getBanji());
+                intent.putExtra("zhuanye", xinxiItemList.get(position).getZhuanye());
                 mContext.startActivity(intent);
             }
         });
@@ -85,6 +88,7 @@ public class XinxiItemAdapter extends ArrayAdapter<XinxiItem> {
         TextView textView_name;
         TextView textView_dianhua;
         TextView textView_banji;
+        TextView textView_zhuanye;
         ImageView imageView;
     }
 }

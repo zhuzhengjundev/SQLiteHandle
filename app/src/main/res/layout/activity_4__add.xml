@@ -135,8 +135,36 @@
             android:textStyle="bold"
             android:gravity="center|right" />
 
-        <EditText
+        <Spinner
             android:id="@+id/acticity_4_add_banji"
+            android:layout_width="match_parent"
+            android:background="@drawable/edit_background"
+            android:layout_height="match_parent"/>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:layout_marginTop="20dp"
+        android:orientation="horizontal"
+        android:background="@drawable/edit_background"
+        android:layout_marginLeft="20dp"
+        android:focusable="true"
+        android:focusableInTouchMode="true"
+        android:layout_marginRight="20dp"
+        android:paddingRight="20dp">
+
+        <TextView
+            android:layout_width="70dp"
+            android:layout_height="match_parent"
+            android:text="专业："
+            android:textColor="#EE6363"
+            android:textStyle="bold"
+            android:gravity="center|right" />
+
+        <Spinner
+            android:id="@+id/acticity_4_add_zhuanye"
             android:layout_width="match_parent"
             android:background="@drawable/edit_background"
             android:layout_height="match_parent"/>
